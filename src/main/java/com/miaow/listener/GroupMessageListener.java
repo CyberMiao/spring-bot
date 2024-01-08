@@ -1,9 +1,11 @@
 package com.miaow.listener;
 
+import com.miaow.service.WeatherService;
 import love.forte.simboot.annotation.ContentTrim;
 import love.forte.simboot.annotation.Filter;
 import love.forte.simboot.annotation.Listener;
 import love.forte.simbot.definition.Member;
+import love.forte.simbot.event.FriendMessageEvent;
 import love.forte.simbot.event.GroupMessageEvent;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +18,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class GroupMessageListener {
 
+    private WeatherService weatherService = new WeatherService();
+
     @Listener
     @Filter(value = "你好", targets = @Filter.Targets(atBot = true))
     @ContentTrim // 当匹配被at时，将'at'这个特殊消息移除后，剩余的文本消息大概率存在前后空格，通过此注解在匹配的时候忽略前后空格
@@ -24,4 +28,14 @@ public class GroupMessageListener {
         Member author = event.getAuthor();
         event.replyAsync("你也好 " + author.getUsername());
     }
+
+    @Listener
+    @Filter(value = "天气", targets = @Filter.Targets(atBot = true))
+    @ContentTrim
+    public void weather(GroupMessageEvent event) {
+        String reply = weatherService.getWeather();
+
+        event.replyAsync(reply);
+    }
+
 }
