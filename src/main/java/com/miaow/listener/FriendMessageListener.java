@@ -19,4 +19,10 @@ public class FriendMessageListener {
     public void hello(FriendMessageEvent event) {
         event.replyAsync("你好啊！");
     }
+
+    @Listener
+    @Filter(value = "我爱你.*")
+    public void iLoveYou(FriendMessageEvent event) {
+        event.replyAsync("我也爱你！");
+    }
 }
