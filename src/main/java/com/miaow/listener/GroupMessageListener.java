@@ -20,7 +20,6 @@ public class GroupMessageListener {
     @Filter(value = "你好", targets = @Filter.Targets(atBot = true))
     @ContentTrim // 当匹配被at时，将'at'这个特殊消息移除后，剩余的文本消息大概率存在前后空格，通过此注解在匹配的时候忽略前后空格
     public void onChannelMessage(GroupMessageEvent event) { // 将要监听的事件类型放在参数里，即代表监听此类型的消息
-        // ...
         // Java中的阻塞式API
         Member author = event.getAuthor();
         event.replyAsync("你也好 " + author.getUsername());
