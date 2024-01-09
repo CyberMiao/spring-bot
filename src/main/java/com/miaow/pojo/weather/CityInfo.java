@@ -7,7 +7,7 @@ package com.miaow.pojo.weather;
  * 城市信息
  *
  * @author TenStreets
- * @version 1.0.0
+ * @version 1.0
  */
 public class CityInfo {
 
@@ -100,4 +100,13 @@ public class CityInfo {
          return updateTime;
      }
 
+    @Override
+    public String toString() {
+        return "CityInfo{" +
+                "city='" + city + '\'' +
+                ", citykey='" + citykey + '\'' +
+                ", parent='" + parent + '\'' +
+                ", updateTime='" + updateTime + '\'' +
+                '}';
+    }
 }

@@ -144,4 +144,15 @@ public class WeatherInfo {
         return data;
     }
 
+    @Override
+    public String toString() {
+        return "WeatherInfo{" +
+                "message='" + message + '\'' +
+                ", status=" + status +
+                ", date='" + date + '\'' +
+                ", time=" + time +
+                ", cityInfo=" + cityInfo +
+                ", data=" + data +
+                '}';
+    }
 }

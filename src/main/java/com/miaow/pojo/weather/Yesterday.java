@@ -108,4 +108,21 @@ public class Yesterday {
          return notice;
      }
 
+    @Override
+    public String toString() {
+        return "Yesterday{" +
+                "date='" + date + '\'' +
+                ", high='" + high + '\'' +
+                ", low='" + low + '\'' +
+                ", ymd=" + ymd +
+                ", week='" + week + '\'' +
+                ", sunrise='" + sunrise + '\'' +
+                ", sunset='" + sunset + '\'' +
+                ", aqi=" + aqi +
+                ", fx='" + fx + '\'' +
+                ", fl='" + fl + '\'' +
+                ", type='" + type + '\'' +
+                ", notice='" + notice + '\'' +
+                '}';
+    }
 }

@@ -77,4 +77,17 @@ public class Data {
          return yesterday;
      }
 
+    @Override
+    public String toString() {
+        return "Data{" +
+                "shidu='" + shidu + '\'' +
+                ", pm25=" + pm25 +
+                ", pm10=" + pm10 +
+                ", quality='" + quality + '\'' +
+                ", wendu='" + wendu + '\'' +
+                ", ganmao='" + ganmao + '\'' +
+                ", forecast=" + forecast +
+                ", yesterday=" + yesterday +
+                '}';
+    }
 }
